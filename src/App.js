@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
 
 function App() {
+  const [first, setfirst] = useState("");
+  console.log(first);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="flex h-screen item-center border border-red-500 justify-center gap-8">
+      <input
+        type="text"
+        value={first}
+        onChange={(event) => setfirst(event.target.value)}
+        className="outline-none border border-blue-600 px-4 py-4 w-[400px] h-[40px]"
+      />
+
+      <button
+        type="button"
+        className="outline-none px-4 py-2 bg-blue-500 w-[100] h-[40px] rounded-md text-white"
+      >
+        Add
+      </button>
     </div>
   );
 }
